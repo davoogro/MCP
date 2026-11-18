@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "unc-fs": {
+      "command": "C:\\DVB\\python\\python.exe",
+      "args": ["-m", "unc_fs_mcp"],
+      "env": {
+        "PYTHONPATH": "C:\\DVB\\mcp\\unc-fs-mcp\\src",
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUNBUFFERED": "1"
+      }
+    }
+  }
+}

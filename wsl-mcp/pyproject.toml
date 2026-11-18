@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "wsl-mcp"
+version = "2.2.0"
+description = "Servidor MCP para ejecutar comandos y operaciones de archivos en WSL desde Windows"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Proprietary" }
+authors = [{ name = "DVB" }]
+dependencies = [
+    "mcp>=2.0.0",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.4"]
+
+[project.scripts]
+wsl-mcp = "wsl_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/wsl_mcp"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra --strict-markers"
+markers = [
+    "wsl: prueba en vivo contra wsl.exe (se omite si no está instalado)",
+]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"

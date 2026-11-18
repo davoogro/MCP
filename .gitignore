@@ -1,0 +1,33 @@
+# Secrets / real config
+.env
+.env.*
+!.env.example
+*.pem
+*.pfx
+*.p12
+*.key
+certs/
+**/config/*.local.*
+**/config/databases.yaml
+**/config/nifi_servers.yaml
+**/config/servers.json
+*.zip
+
+# Build / deps / caches
+node_modules/
+dist/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+*.egg-info/
+.venv/
+
+# Runtime output
+logs/
+*.log
+out/
+backups/
+reports/
+exports/

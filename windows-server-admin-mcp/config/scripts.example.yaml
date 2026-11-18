@@ -1,0 +1,14 @@
+scripts:
+  smoke_test:
+    description: PowerShell smoke test for remote execution verification
+    path: authorized_scripts/smoke_test.ps1
+    sha256: auto
+    timeout_seconds: 60
+    allowed_servers:
+      - integration-server-01
+      - lab-server-02
+    parameters:
+      message:
+        type: string
+        required: false
+        description: Optional message echoed in the response

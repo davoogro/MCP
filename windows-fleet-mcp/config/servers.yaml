@@ -1,0 +1,27 @@
+defaults:
+  port: 5985
+  use_ssl: false
+  open_timeout_seconds: 20
+  operation_timeout_seconds: 180
+  permissions:
+    read: true
+    manage_services: false
+    manage_processes: false
+    manage_tasks: false
+    run_powershell: false
+    file_transfer: false
+    restart_server: false
+  file_read_denylist:
+    - "*\\config\\SAM"
+    - "*\\config\\SECURITY"
+    - "*.pfx"
+    - "*.p12"
+servers:
+  appsrv01: {hostname: appsrv01, environment: integration, tags: [windows, apps]}
+  appsrvb03: {hostname: appsrvb03, environment: integration, tags: [windows, ccos]}
+  appsrv05: {hostname: appsrv05, environment: integration, tags: [windows, apps]}
+  appsrv03: {hostname: appsrv03, environment: integration, tags: [windows, apps]}
+  dbsrvb05: {hostname: dbsrvb05, environment: integration, tags: [windows, ccos]}
+  appsrv08: {hostname: appsrv08, environment: integration, tags: [windows, apps]}
+  appsrv07: {hostname: appsrv08, environment: integration, tags: [windows, apps]}
+protected_services: [RpcSs, LanmanServer, NTDS, DNS, WinRM, EventLog, SamSs]

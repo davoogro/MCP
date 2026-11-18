@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "multi-postgres": {
+      "command": "node",
+      "args": [
+        "C:\\DVB\\mcp\\multi-postgres-mcp\\dist\\src\\index.js"
+      ],
+      "env": {
+        "PG_MCP_CONFIG": "C:\\DVB\\mcp\\multi-postgres-mcp\\config\\databases.yaml",
+        "TEST_POSTGRES_USER": "your_readonly_user",
+        "TEST_POSTGRES_PASSWORD": "your_password"
+      }
+    }
+  }
+}

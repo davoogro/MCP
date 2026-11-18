@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "oss-fm-oracle": {
+      "command": "C:\\DVB\\python\\python.exe",
+      "args": ["-m", "oss_fm_oracle_mcp"],
+      "cwd": "C:\\DVB\\mcp\\oss-fm-oracle-mcp",
+      "env": {
+        "ORACLE_FM_USER": "REPLACE_ME",
+        "ORACLE_FM_PASSWORD": "REPLACE_ME",
+        "ORACLE_FM_HOST": "192.0.2.204",
+        "ORACLE_FM_SERVICE": "OSS",
+        "ORACLE_FM_MAX_ROWS": "5000",
+        "ORACLE_FM_QUERY_TIMEOUT_S": "30",
+        "ORACLE_FM_RC8_CHUNK_DAYS": "3"
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+global:
+  block_shell_metacharacters: true
+  block_unc_paths: true
+  block_wildcards: true
+  block_localhost: true
+  block_raw_ips_unless_declared: true
+  confirmation_token_ttl_seconds: 600
+  confirmation_token_max_ttl_seconds: 900
+  max_audit_query_rows: 500
+
+# Services that must never be restarted via MCP (prefix match for MSEXCHANGE*)
+service_restart_denylist:
+  - RpcSs
+  - LanmanServer
+  - NTDS
+  - DNS
+  - W3SVC
+  - MSEXCHANGEIS
+  - MSEXCHANGEADTOPOLOGY
+  - MSExchangeTransport
+
+approved_diagnostics:
+  - ping
+  - dns_resolve
+  - tcp_port_check
+  - winrm_listener
+  - disk_smart_status
+
+approved_tcp_ports:
+  - 5985
+  - 5986
+  - 445
+  - 135
+
+# Documented restart reason codes (used by prepare/confirm_server_restart)
+restart_reason_codes:
+  PLANNED_MAINTENANCE: Planned maintenance window
+  PATCHING: Security or operating system patching
+  HARDWARE: Hardware maintenance or replacement
+  APPLICATION: Application deployment requiring reboot
+  EMERGENCY: Emergency recovery reboot
+  OTHER: Other documented reason requiring approval

@@ -1,0 +1,18 @@
+{
+  "cold": {
+    "test_connection": 9279,
+    "fleet_overview": 10250,
+    "get_disks_all": 351,
+    "get_services_problems": 425,
+    "get_scheduled_tasks_failed": 2938,
+    "get_events_1_server": 203
+  },
+  "warm": {
+    "test_connection": 11673,
+    "fleet_overview": 9618,
+    "get_disks_all": 159,
+    "get_services_problems": 385,
+    "get_scheduled_tasks_failed": 1731,
+    "get_events_1_server": 114
+  }
+}

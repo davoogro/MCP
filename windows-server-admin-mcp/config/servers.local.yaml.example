@@ -1,0 +1,74 @@
+# Copy to servers.local.yaml (gitignored) and fill in real hostnames.
+
+# Uses integrated Windows authentication — no passwords required.
+
+#
+
+# Example: map integration-server-01 id to your real WinRM host:
+
+#   integration-server-01:
+
+#     hostname: your-real-hostname.example.local
+
+
+
+defaults:
+
+  connection_timeout_seconds: 20
+
+  operation_timeout_seconds: 180
+
+
+
+servers:
+
+  integration-server-01:
+
+    hostname: integration-server-01.example.local
+
+    environment: integration
+
+    enabled: true
+
+    connection:
+
+      transport: winrm
+
+      authentication: current_windows_identity
+
+      powershell_executable: powershell.exe
+
+      use_pssession: true
+
+      allow_smb_fallback: true
+
+      port: 5985
+
+      use_ssl: false
+
+    permissions:
+
+      read_operations: true
+
+      authorized_scripts: true
+
+      restart_service: false
+
+      restart_server: false
+
+      cancel_restart: false
+
+    limits:
+
+      command_timeout_seconds: 120
+
+      script_timeout_seconds: 600
+
+      max_parallel_operations: 2
+
+    tags:
+
+      - windows
+
+      - integration
+

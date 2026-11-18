@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "opt-mssql-mcp"
+version = "1.1.0"
+description = "MCP de lectura y escritura para el SQL Server de winsrv01"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Proprietary" }
+authors = [{ name = "DVB" }]
+dependencies = [
+    "mcp>=2.0.0",
+    "pyodbc>=5.0.0",
+    "python-dotenv>=1.0.0",
+    "sqlparse>=0.5.0",
+    "pyarrow>=15.0.0",
+    "boto3>=1.34.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.4"]
+
+[project.scripts]
+opt-mssql-mcp = "opt_mssql_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/opt_mssql_mcp"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra --strict-markers"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"

@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "nifi": {
+      "type": "stdio",
+      "command": "C:\\DVB\\python\\python.exe",
+      "args": ["-m", "nifi_mcp"],
+      "envFile": "C:\\DVB\\mcp\\nifi-mcp\\.env"
+    }
+  }
+}

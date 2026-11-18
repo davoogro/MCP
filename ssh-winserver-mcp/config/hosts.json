@@ -1,0 +1,10 @@
+{
+  "default": "winsrv01",
+  "hosts": {
+    "winsrv01": {
+      "ssh_alias": "winsrv01",
+      "description": "SQLHOST06 - Windows Server 2025 Standard (192.0.2.38 vía ProxyJump jumphost), usuario winsrv01 (admin local)",
+      "allow_write": true
+    }
+  }
+}

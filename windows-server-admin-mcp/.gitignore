@@ -1,0 +1,58 @@
+# Local secrets and inventory
+config/servers.local.yaml
+config/scripts.local.yaml
+.env
+*.local.yaml
+
+# Python
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+.uv/
+
+# Keep uv.lock in repo (optional lockfile for reproducible installs)
+# uv.lock is tracked unless you prefer local-only resolution
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Generated launchers (machine-specific absolute paths)
+scripts/launch.ps1
+scripts/launch.cmd
+*.log
+
+# Cursor MCP backups (may contain local paths)
+backups/
+
+# Reports with real hostnames or sensitive diagnostic data
+reports/environment_diagnostic.json
+reports/integration_*.md
+reports/*appsrv01*
+reports/*corp*
+reports/*company*
+
+# Sanitized markdown reports may be committed
+!reports/*.example.md
+
+# Cursor config backups
+*.mcp.json.bak*
+mcp.json.bak*
+
+# Test / coverage artifacts
+.coverage
+coverage.xml
+test_results.xml
+reports/coverage.xml
+reports/test_results.xml
+
+# Diagnostic outputs (variants and markdown)
+reports/environment-diagnosis.json
+reports/environment_diagnostic.md

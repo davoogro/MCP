@@ -1,0 +1,13 @@
+# Copiar a servers.local.yaml (gitignored) y habilitar permisos por servidor.
+# Solo opt-in: todo permanece en false hasta que lo enciendas explícitamente.
+
+servers:
+  appsrv01:
+    permissions:
+      read: true
+      manage_services: false
+      manage_processes: false
+      manage_tasks: false
+      run_powershell: false
+      file_transfer: false
+      restart_server: false

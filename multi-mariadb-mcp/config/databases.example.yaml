@@ -1,0 +1,26 @@
+defaults:
+  port: 3306
+  sslmode: disable
+  statementTimeoutMs: 60000
+  connectionTimeoutMs: 10000
+  maxRows: 2000
+  readonly: true
+
+connections:
+  dbsrv01-3306:
+    description: MariaDB dbsrv01:3306
+    host: dbsrv01
+    port: 3306
+    database: information_schema
+    userEnv: MARIADB_USER
+    passwordEnv: MARIADB_PASSWORD
+    sslmode: disable
+
+  dbsrv01-3309:
+    description: MariaDB dbsrv01:3309 (planning)
+    host: dbsrv01
+    port: 3309
+    database: planning
+    userEnv: MARIADB_USER
+    passwordEnv: MARIADB_PASSWORD
+    sslmode: disable

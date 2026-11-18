@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "windows-fleet": {
+      "command": "C:\\DVB\\python\\python.exe",
+      "args": ["-m", "windows_fleet_mcp"],
+      "cwd": "C:\\DVB\\mcp\\windows-fleet-mcp",
+      "env": {
+        "PYTHONPATH": "C:\\DVB\\mcp\\windows-fleet-mcp\\src"
+      }
+    }
+  }
+}

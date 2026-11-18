@@ -1,0 +1,6 @@
+.env
+.env.local
+*.local.json
+node_modules/
+package-lock.json
+.npm-cache/

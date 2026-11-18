@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "windows-admin": {
+      "command": "C:\\Users\\youruser\\AppData\\Local\\Programs\\cursor\\resources\\app\\resources\\helpers\\node.exe",
+      "args": ["C:\\DVB\\mcp\\windows-admin-mcp\\dist\\src\\index.js"],
+      "env": {
+        "WINMCP_CONFIG": "C:\\DVB\\mcp\\windows-admin-mcp\\config\\servers.json",
+        "WINMCP_AUDIT_DIR": "C:\\DVB\\mcp\\windows-admin-mcp\\logs\\audit"
+      }
+    }
+  }
+}

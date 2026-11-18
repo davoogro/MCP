@@ -1,0 +1,57 @@
+defaults:
+  port: 5432
+  sslmode: prefer
+  statementTimeoutMs: 15000
+  connectionTimeoutMs: 10000
+  maxRows: 500
+  readonly: true
+
+connections:
+  test-postgres:
+    description: Servidor PostgreSQL usado para validar el MCP
+    host: appsrvb01
+    port: 55432
+    database: postgres
+    userEnv: TEST_POSTGRES_USER
+    passwordEnv: TEST_POSTGRES_PASSWORD
+    sslmode: prefer
+
+  appsrv06:
+    description: Server appsrv06
+    host: appsrv06
+    port: 5432
+    database: postgres
+    userEnv: TEST_POSTGRES_USER
+    passwordEnv: TEST_POSTGRES_PASSWORD
+
+  dbsrv01:
+    description: Server dbsrv01
+    host: dbsrv01
+    port: 5432
+    database: postgres
+    userEnv: TEST_POSTGRES_USER
+    passwordEnv: TEST_POSTGRES_PASSWORD
+
+  dbsrvb05:
+    description: Server dbsrvb05 (5432)
+    host: dbsrvb05
+    port: 5432
+    database: postgres
+    userEnv: TEST_POSTGRES_USER
+    passwordEnv: TEST_POSTGRES_PASSWORD
+
+  dbsrvb05-5433:
+    description: Server dbsrvb05 (5433)
+    host: dbsrvb05
+    port: 5433
+    database: postgres
+    userEnv: TEST_POSTGRES_USER
+    passwordEnv: TEST_POSTGRES_PASSWORD
+
+  dbsrv02:
+    description: Server dbsrv02
+    host: dbsrv02
+    port: 5432
+    database: postgres
+    userEnv: TEST_POSTGRES_USER
+    passwordEnv: TEST_POSTGRES_PASSWORD

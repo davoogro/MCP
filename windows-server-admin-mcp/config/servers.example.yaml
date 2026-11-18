@@ -1,0 +1,63 @@
+defaults:
+  connection_timeout_seconds: 15
+  operation_timeout_seconds: 120
+  reboot_timeout_seconds: 900
+  poll_interval_seconds: 10
+  max_output_chars: 100000
+  staging_root: "C:\\ProgramData\\WindowsServerAdminMCP\\staging"
+  prefer_pssession: true
+  allow_smb_fallback: true
+
+servers:
+  integration-server-01:
+    hostname: integration-server-01.example.local
+    environment: integration
+    enabled: true
+    description: Example integration server (sanitized)
+    connection:
+      transport: winrm
+      authentication: current_windows_identity
+      powershell_executable: powershell.exe
+      use_pssession: true
+      allow_smb_fallback: true
+      port: 5985
+      use_ssl: false
+    permissions:
+      read_operations: true
+      authorized_scripts: true
+      restart_service: false
+      restart_server: false
+      cancel_restart: false
+    limits:
+      command_timeout_seconds: 120
+      script_timeout_seconds: 600
+      max_parallel_operations: 2
+    tags:
+      - example
+      - read-only
+
+  lab-server-02:
+    hostname: lab-server-02.example.local
+    environment: lab
+    enabled: true
+    description: Lab server with limited mutating permissions
+    connection:
+      transport: winrm
+      authentication: current_windows_identity
+      powershell_executable: powershell.exe
+      use_pssession: true
+      allow_smb_fallback: true
+      port: 5985
+      use_ssl: false
+    permissions:
+      read_operations: true
+      authorized_scripts: true
+      restart_service: true
+      restart_server: false
+      cancel_restart: false
+    limits:
+      command_timeout_seconds: 120
+      script_timeout_seconds: 600
+      max_parallel_operations: 2
+    tags:
+      - lab

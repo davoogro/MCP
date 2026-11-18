@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fabric-cli-mcp"
+version = "1.0.0"
+description = "MCP sobre Microsoft Fabric CLI (fab): administración completa de Fabric y Power BI"
+requires-python = ">=3.10"
+license = { text = "Proprietary" }
+authors = [{ name = "DVB" }]
+dependencies = ["mcp>=2.0.0", "ms-fabric-cli>=1.8.0"]
+
+[project.scripts]
+fabric-cli-mcp = "fabric_cli_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fabric_cli_mcp"]

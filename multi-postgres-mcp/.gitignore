@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+config/databases.yaml
+*.log
+coverage/
+.DS_Store

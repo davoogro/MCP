@@ -1,0 +1,47 @@
+{
+  "defaults": {
+    "connectionTimeoutSeconds": 15,
+    "operationTimeoutSeconds": 120,
+    "rebootTimeoutSeconds": 900,
+    "maxConcurrency": 2,
+    "verifyTls": true,
+    "allowParallelReboot": false,
+    "maxParallelReboot": 1
+  },
+  "servers": [
+    {
+      "name": "SERVER-EXAMPLE-01",
+      "address": "server-example-01.example.local",
+      "transport": "auto",
+      "port": null,
+      "allowReboot": false,
+      "protectedRole": true,
+      "allowProtectedReboot": false,
+      "allowServiceRestart": false,
+      "allowForceReboot": false,
+      "criticalServices": ["W32Time"],
+      "tags": ["example", "template"],
+      "credentialTargetEnv": "WINMCP_SERVER_EXAMPLE_01_CREDENTIAL",
+      "usernameEnv": "WINMCP_SERVER_EXAMPLE_01_USER",
+      "passwordEnv": "WINMCP_SERVER_EXAMPLE_01_PASSWORD"
+    },
+    {
+      "name": "SERVER-PILOT-01",
+      "address": "server-pilot-01.example.local",
+      "transport": "auto",
+      "port": null,
+      "allowReboot": false,
+      "protectedRole": false,
+      "allowProtectedReboot": false,
+      "allowServiceRestart": true,
+      "allowForceReboot": false,
+      "criticalServices": ["W32Time", "EventLog"],
+      "tags": ["pilot"],
+      "credentialTargetEnv": "WINMCP_SERVER_PILOT_01_CREDENTIAL",
+      "usernameEnv": "WINMCP_SERVER_PILOT_01_USER",
+      "passwordEnv": "WINMCP_SERVER_PILOT_01_PASSWORD",
+      "sshKeyPathEnv": "WINMCP_SERVER_PILOT_01_SSH_KEY",
+      "winrmCertThumbprintEnv": "WINMCP_SERVER_PILOT_01_CERT_THUMBPRINT"
+    }
+  ]
+}

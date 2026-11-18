@@ -1,0 +1,32 @@
+# Copie este archivo a nifi_servers.yaml y ajuste hosts/credenciales.
+# Nunca almacene secretos en YAML; use variables de entorno.
+
+global:
+  max_parallel_servers: 4
+  default_timeout_seconds: 30
+  default_retries: 3
+  default_limit: 100
+  max_limit: 10000
+  health:
+    bulletin_age_minutes: 60
+    queue_flowfiles_warning: 10000
+    queue_flowfiles_critical: 50000
+
+servers:
+  nifi-lab-01:
+    name: "NiFi Lab 01"
+    host: nifi-lab-01.example.local
+    environment: lab
+    enabled: true
+    description: "Servidor de laboratorio de ejemplo"
+    scheme: https
+    port: 8443
+    api_path: /nifi-api
+    verify_ssl: true
+    auth_type: username_password
+    username_env: NIFI_LAB01_USER
+    password_env: NIFI_LAB01_PASSWORD
+    token_env: NIFI_LAB01_TOKEN
+    timeout: 30
+    tags:
+      - lab
