@@ -13,15 +13,20 @@ Cada carpeta es un proyecto independiente con su propio `README.md`, dependencia
 | [multi-mariadb-mcp](multi-mariadb-mcp) | TypeScript | Varias bases MariaDB/MySQL, solo lectura |
 | [oss-fm-oracle-mcp](oss-fm-oracle-mcp) | Python | Oracle de alarmas TelcoVendorB OSS FM, solo lectura |
 | [nifi-mcp](nifi-mcp) | Python | Apache NiFi multi-servidor, solo lectura |
+| [aws-data-mcp](aws-data-mcp) | Python | Athena, S3, Glue, Lambda, Step Functions, CloudWatch y QuickSight (escrituras con dry-run) |
+| [redshift-mcp](redshift-mcp) | Python | Amazon Redshift vía Data API, solo lectura |
 | [s3-mcp](s3-mcp) | Python | Exploración de buckets S3 + SQL con DuckDB |
 | [unc-fs-mcp](unc-fs-mcp) | Python | Directorios UNC de Windows |
 | [ssh-linux-mcp](ssh-linux-mcp) | Python | Servidores Linux por SSH (solo lectura, allowlist de comandos) |
 | [ssh-winserver-mcp](ssh-winserver-mcp) | Python | Administración de Windows Server por SSH + PowerShell |
+| [ssh-multiserver-mcp](ssh-multiserver-mcp) | Node | Un solo MCP para todos los alias de `~/.ssh/config` (Linux/Windows, read_only/managed) |
 | [windows-fleet-mcp](windows-fleet-mcp) | Python | Flota Windows Server vía WinRM |
 | [windows-server-admin-mcp](windows-server-admin-mcp) | Python | Administración controlada de Windows Server (allowlist, tokens de reinicio) |
 | [windows-admin-mcp](windows-admin-mcp) | TypeScript | Administración de Windows Server vía PowerShell remoting |
 | [wsl-mcp](wsl-mcp) | Python | Comandos y archivos dentro de WSL |
 | [gitlab-mcp](gitlab-mcp) | Node | Wrapper local de `@zereight/mcp-gitlab` para GitLab self-hosted |
+| [notion-mcp](notion-mcp) | Python | Notion vía integration token |
+| [office365-mcp](office365-mcp) | Python | Lectura de correo Microsoft 365 (Graph, `Mail.Read`, caché DPAPI) |
 | [legacy](legacy) | Python | Versiones antiguas de un solo archivo (Fabric, Postgres, WSL) |
 
 ## Configuración

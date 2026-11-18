@@ -1,0 +1,9 @@
+.env
+*.env
+!.env.example
+__pycache__/
+*.pyc
+*.pem
+aws_artifacts/
+node_modules/
+*.log
