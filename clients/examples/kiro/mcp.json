@@ -224,6 +224,62 @@
       ],
       "disabled": false,
       "autoApprove": []
+    },
+    "aws-data": {
+      "command": "C:\\path\\to\\python.exe",
+      "args": [
+        "C:\\path\\to\\MCP\\aws-data-mcp\\athena_mcp_server.py"
+      ],
+      "env": {
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUNBUFFERED": "1"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "redshift": {
+      "command": "C:\\path\\to\\python.exe",
+      "args": [
+        "C:\\path\\to\\MCP\\redshift-mcp\\redshift_mcp_server.py"
+      ],
+      "env": {
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUNBUFFERED": "1"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "notion": {
+      "command": "C:\\path\\to\\python.exe",
+      "args": [
+        "C:\\path\\to\\MCP\\notion-mcp\\notion_mcp_server.py"
+      ],
+      "env": {
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUNBUFFERED": "1"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "office365": {
+      "command": "C:\\path\\to\\python.exe",
+      "args": [
+        "C:\\path\\to\\MCP\\office365-mcp\\office365_mcp_server.py"
+      ],
+      "env": {
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUNBUFFERED": "1"
+      },
+      "disabled": false,
+      "autoApprove": []
+    },
+    "ssh-multiserver": {
+      "command": "node",
+      "args": [
+        "C:\\path\\to\\MCP\\ssh-multiserver-mcp\\index.js"
+      ],
+      "disabled": false,
+      "autoApprove": []
     }
   }
 }

@@ -51,6 +51,9 @@ def load_servers(root: str, python: str, node: str, only: set[str], exclude: set
         if "python_module" in s:
             command, args = python, ["-m", s["python_module"]]
             env = {"PYTHONPATH": f"{d}{sep}src", "PYTHONIOENCODING": "utf-8", "PYTHONUNBUFFERED": "1", **env}
+        elif "python_script" in s:
+            command, args = python, [d + sep + s["python_script"]]
+            env = {"PYTHONIOENCODING": "utf-8", "PYTHONUNBUFFERED": "1", **env}
         else:
             command, args = node, [d + sep + s["node_script"].replace("/", sep)]
         out[name] = {"command": command, "args": args, "env": env}
@@ -202,7 +205,8 @@ def main() -> None:
     split = lambda s: {x.strip() for x in s.split(",") if x.strip()}  # noqa: E731
     if a.list:
         for name, s in json.loads((HERE / "servers.json").read_text(encoding="utf-8"))["servers"].items():
-            print(f"{name:22} {s['folder']:26} {s.get('build', '(python: pip install -e .)')}")
+            default = "pip install -r requirements.txt" if "python_script" in s else "pip install -e ."
+            print(f"{name:22} {s['folder']:26} {s.get('build', default)}")
         return
     clients = split(a.client)
     if bad := clients - set(CLIENTS):

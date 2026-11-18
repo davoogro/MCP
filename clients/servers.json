@@ -26,6 +26,13 @@
                                        "WINMCP_AUDIT_DIR": "{dir}{sep}logs{sep}audit" },
                               "build": "npm install && npm run build" },
     "gitlab":               { "folder": "gitlab-mcp",               "node_script": "scripts/launch.mjs",
+                              "build": "npm install" },
+    "aws-data":             { "folder": "aws-data-mcp",             "python_script": "athena_mcp_server.py" },
+    "redshift":             { "folder": "redshift-mcp",             "python_script": "redshift_mcp_server.py" },
+    "notion":               { "folder": "notion-mcp",               "python_script": "notion_mcp_server.py",
+                              "_note": "lee .env desde el directorio de trabajo: pon NOTION_API_KEY en env o lanza desde su carpeta" },
+    "office365":            { "folder": "office365-mcp",            "python_script": "office365_mcp_server.py" },
+    "ssh-multiserver":      { "folder": "ssh-multiserver-mcp",      "node_script": "index.js",
                               "build": "npm install" }
   }
 }

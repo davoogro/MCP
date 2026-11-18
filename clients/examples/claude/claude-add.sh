@@ -35,5 +35,15 @@ claude mcp remove windows-admin --scope user 2>/dev/null
 claude mcp add-json windows-admin '{"type": "stdio", "command": "node", "args": ["C:\\path\\to\\MCP\\windows-admin-mcp\\dist\\src\\index.js"], "env": {"WINMCP_CONFIG": "C:\\path\\to\\MCP\\windows-admin-mcp\\config\\servers.json", "WINMCP_AUDIT_DIR": "C:\\path\\to\\MCP\\windows-admin-mcp\\logs\\audit"}}' --scope user
 claude mcp remove gitlab --scope user 2>/dev/null
 claude mcp add-json gitlab '{"type": "stdio", "command": "node", "args": ["C:\\path\\to\\MCP\\gitlab-mcp\\scripts\\launch.mjs"], "env": {}}' --scope user
+claude mcp remove aws-data --scope user 2>/dev/null
+claude mcp add-json aws-data '{"type": "stdio", "command": "C:\\path\\to\\python.exe", "args": ["C:\\path\\to\\MCP\\aws-data-mcp\\athena_mcp_server.py"], "env": {"PYTHONIOENCODING": "utf-8", "PYTHONUNBUFFERED": "1"}}' --scope user
+claude mcp remove redshift --scope user 2>/dev/null
+claude mcp add-json redshift '{"type": "stdio", "command": "C:\\path\\to\\python.exe", "args": ["C:\\path\\to\\MCP\\redshift-mcp\\redshift_mcp_server.py"], "env": {"PYTHONIOENCODING": "utf-8", "PYTHONUNBUFFERED": "1"}}' --scope user
+claude mcp remove notion --scope user 2>/dev/null
+claude mcp add-json notion '{"type": "stdio", "command": "C:\\path\\to\\python.exe", "args": ["C:\\path\\to\\MCP\\notion-mcp\\notion_mcp_server.py"], "env": {"PYTHONIOENCODING": "utf-8", "PYTHONUNBUFFERED": "1"}}' --scope user
+claude mcp remove office365 --scope user 2>/dev/null
+claude mcp add-json office365 '{"type": "stdio", "command": "C:\\path\\to\\python.exe", "args": ["C:\\path\\to\\MCP\\office365-mcp\\office365_mcp_server.py"], "env": {"PYTHONIOENCODING": "utf-8", "PYTHONUNBUFFERED": "1"}}' --scope user
+claude mcp remove ssh-multiserver --scope user 2>/dev/null
+claude mcp add-json ssh-multiserver '{"type": "stdio", "command": "node", "args": ["C:\\path\\to\\MCP\\ssh-multiserver-mcp\\index.js"], "env": {}}' --scope user
 
 claude mcp list

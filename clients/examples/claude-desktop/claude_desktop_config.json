@@ -190,6 +190,52 @@
       "args": [
         "C:\\path\\to\\MCP\\gitlab-mcp\\scripts\\launch.mjs"
       ]
+    },
+    "aws-data": {
+      "command": "C:\\path\\to\\python.exe",
+      "args": [
+        "C:\\path\\to\\MCP\\aws-data-mcp\\athena_mcp_server.py"
+      ],
+      "env": {
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUNBUFFERED": "1"
+      }
+    },
+    "redshift": {
+      "command": "C:\\path\\to\\python.exe",
+      "args": [
+        "C:\\path\\to\\MCP\\redshift-mcp\\redshift_mcp_server.py"
+      ],
+      "env": {
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUNBUFFERED": "1"
+      }
+    },
+    "notion": {
+      "command": "C:\\path\\to\\python.exe",
+      "args": [
+        "C:\\path\\to\\MCP\\notion-mcp\\notion_mcp_server.py"
+      ],
+      "env": {
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUNBUFFERED": "1"
+      }
+    },
+    "office365": {
+      "command": "C:\\path\\to\\python.exe",
+      "args": [
+        "C:\\path\\to\\MCP\\office365-mcp\\office365_mcp_server.py"
+      ],
+      "env": {
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUNBUFFERED": "1"
+      }
+    },
+    "ssh-multiserver": {
+      "command": "node",
+      "args": [
+        "C:\\path\\to\\MCP\\ssh-multiserver-mcp\\index.js"
+      ]
     }
   }
 }
