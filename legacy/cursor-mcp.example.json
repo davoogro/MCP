@@ -1,0 +1,41 @@
+{
+  "mcpServers": {
+    "fabric-sql": {
+      "command": "C:\\path\\to\\python.exe",
+      "args": [
+        "C:\\path\\to\\MCP\\legacy\\fabric_mcp_server.py"
+      ],
+      "env": {
+        "FABRIC_SERVER": "your-workspace.datawarehouse.fabric.microsoft.com",
+        "FABRIC_DATABASE": "master",
+        "FABRIC_USER": "tu.correo@empresa.com",
+        "FABRIC_PASSWORD": "tu_password"
+      }
+    },
+    "postgres": {
+      "command": "C:\\path\\to\\python.exe",
+      "args": [
+        "C:\\path\\to\\MCP\\legacy\\postgres_mcp_server.py"
+      ],
+      "env": {
+        "PG_USER": "postgres",
+        "PG_PASSWORD": "tu_password_postgres",
+        "PG_CONNECTIONS_FILE": "C:\\path\\to\\MCP\\legacy\\postgres_connections.json",
+        "PG_READONLY": "true"
+      }
+    },
+    "wsl": {
+      "command": "C:\\path\\to\\python.exe",
+      "args": [
+        "-u",
+        "C:\\path\\to\\MCP\\legacy\\wsl_mcp_server.py"
+      ],
+      "env": {
+        "PYTHONUNBUFFERED": "1",
+        "PYTHONIOENCODING": "utf-8",
+        "WSL_DISTRO": "mynoble24.04",
+        "WSL_DEFAULT_CWD": "/home"
+      }
+    }
+  }
+}

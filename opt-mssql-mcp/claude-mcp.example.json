@@ -2,10 +2,10 @@
   "mcpServers": {
     "opt-mssql": {
       "type": "stdio",
-      "command": "C:\DVB\python\python.exe",
+      "command": "C:\\DVB\\python\\python.exe",
       "args": ["-m", "opt_mssql_mcp"],
       "env": {
-        "PYTHONPATH": "C:\DVB\mcp\opt-mssql-mcp\src",
+        "PYTHONPATH": "C:\\DVB\\mcp\\opt-mssql-mcp\\src",
         "PYTHONIOENCODING": "utf-8",
         "PYTHONUNBUFFERED": "1"
       }

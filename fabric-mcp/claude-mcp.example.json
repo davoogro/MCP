@@ -1,10 +1,10 @@
 {
   "mcpServers": {
     "fabric": {
-      "command": "C:\DVB\python\python.exe",
+      "command": "C:\\DVB\\python\\python.exe",
       "args": ["-m", "fabric_mcp"],
       "env": {
-        "PYTHONPATH": "C:\DVB\mcp\fabric-mcp\src",
+        "PYTHONPATH": "C:\\DVB\\mcp\\fabric-mcp\\src",
         "PYTHONIOENCODING": "utf-8",
         "PYTHONUNBUFFERED": "1"
       }

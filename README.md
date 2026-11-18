@@ -28,6 +28,7 @@ Cada carpeta es un proyecto independiente con su propio `README.md`, dependencia
 | [notion-mcp](notion-mcp) | Python | Notion vía integration token |
 | [office365-mcp](office365-mcp) | Python | Lectura de correo Microsoft 365 (Graph, `Mail.Read`, caché DPAPI) |
 | [legacy](legacy) | Python | Versiones antiguas de un solo archivo (Fabric, Postgres, WSL) |
+| [clients](clients) | Python | Generador de config para Cursor, Kiro, Codex, Claude, VS Code |
 
 ## Configuración
 
@@ -36,6 +37,17 @@ Ningún archivo de este repo contiene credenciales ni servidores reales: los hos
 
 1. Copia `.env.example` a `.env` en la carpeta del servidor y rellena tus valores.
 2. Copia los `config/*.example.*` a su nombre real (p. ej. `databases.yaml`) y edítalos.
-3. Registra el servidor en tu cliente MCP usando `claude-mcp.example.json` / `cursor-mcp.example.json` como guía.
+3. Registra los servidores en tu cliente MCP con el generador (ver abajo).
 
 Los `.env`, configs reales, logs y certificados están en `.gitignore`.
+
+## Clientes: Cursor, Kiro, Codex, Claude Code, Claude Desktop, VS Code
+
+[`clients/generate.py`](clients) genera la configuración de todos (o algunos) MCP para cada cliente con tus rutas,
+y con `--install` la fusiona en tu config de usuario sin borrar lo que ya tienes (deja backup):
+
+```powershell
+python clients\generate.py --root C:\ruta\al\repo --python C:\ruta\python.exe --only mssql,s3 --client cursor,kiro,codex --install
+```
+
+Ejemplos listos para copiar en [`clients/examples/`](clients/examples). Detalles en [`clients/README.md`](clients/README.md).

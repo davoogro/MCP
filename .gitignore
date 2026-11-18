@@ -31,3 +31,6 @@ out/
 backups/
 reports/
 exports/
+
+# Salida de clients/generate.py con tus rutas
+clients/out/

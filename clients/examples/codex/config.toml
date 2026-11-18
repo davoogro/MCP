@@ -1,0 +1,163 @@
+# Pegar en ~/.codex/config.toml (o usar --install)
+
+[mcp_servers.mssql]
+command = "C:\\path\\to\\python.exe"
+args = ["-m", "mssql_mcp"]
+startup_timeout_sec = 30
+tool_timeout_sec = 300
+[mcp_servers.mssql.env]
+PYTHONPATH = "C:\\path\\to\\MCP\\mssql-mcp\\src"
+PYTHONIOENCODING = "utf-8"
+PYTHONUNBUFFERED = "1"
+
+[mcp_servers.opt-mssql]
+command = "C:\\path\\to\\python.exe"
+args = ["-m", "opt_mssql_mcp"]
+startup_timeout_sec = 30
+tool_timeout_sec = 300
+[mcp_servers.opt-mssql.env]
+PYTHONPATH = "C:\\path\\to\\MCP\\opt-mssql-mcp\\src"
+PYTHONIOENCODING = "utf-8"
+PYTHONUNBUFFERED = "1"
+
+[mcp_servers.fabric]
+command = "C:\\path\\to\\python.exe"
+args = ["-m", "fabric_mcp"]
+startup_timeout_sec = 30
+tool_timeout_sec = 300
+[mcp_servers.fabric.env]
+PYTHONPATH = "C:\\path\\to\\MCP\\fabric-mcp\\src"
+PYTHONIOENCODING = "utf-8"
+PYTHONUNBUFFERED = "1"
+
+[mcp_servers.fabric-cli]
+command = "C:\\path\\to\\python.exe"
+args = ["-m", "fabric_cli_mcp"]
+startup_timeout_sec = 30
+tool_timeout_sec = 300
+[mcp_servers.fabric-cli.env]
+PYTHONPATH = "C:\\path\\to\\MCP\\fabric-cli-mcp\\src"
+PYTHONIOENCODING = "utf-8"
+PYTHONUNBUFFERED = "1"
+
+[mcp_servers.oss-fm-oracle]
+command = "C:\\path\\to\\python.exe"
+args = ["-m", "oss_fm_oracle_mcp"]
+startup_timeout_sec = 30
+tool_timeout_sec = 300
+[mcp_servers.oss-fm-oracle.env]
+PYTHONPATH = "C:\\path\\to\\MCP\\oss-fm-oracle-mcp\\src"
+PYTHONIOENCODING = "utf-8"
+PYTHONUNBUFFERED = "1"
+
+[mcp_servers.nifi]
+command = "C:\\path\\to\\python.exe"
+args = ["-m", "nifi_mcp"]
+startup_timeout_sec = 30
+tool_timeout_sec = 300
+[mcp_servers.nifi.env]
+PYTHONPATH = "C:\\path\\to\\MCP\\nifi-mcp\\src"
+PYTHONIOENCODING = "utf-8"
+PYTHONUNBUFFERED = "1"
+
+[mcp_servers.s3]
+command = "C:\\path\\to\\python.exe"
+args = ["-m", "s3_mcp"]
+startup_timeout_sec = 30
+tool_timeout_sec = 300
+[mcp_servers.s3.env]
+PYTHONPATH = "C:\\path\\to\\MCP\\s3-mcp\\src"
+PYTHONIOENCODING = "utf-8"
+PYTHONUNBUFFERED = "1"
+
+[mcp_servers.unc-fs]
+command = "C:\\path\\to\\python.exe"
+args = ["-m", "unc_fs_mcp"]
+startup_timeout_sec = 30
+tool_timeout_sec = 300
+[mcp_servers.unc-fs.env]
+PYTHONPATH = "C:\\path\\to\\MCP\\unc-fs-mcp\\src"
+PYTHONIOENCODING = "utf-8"
+PYTHONUNBUFFERED = "1"
+
+[mcp_servers.ssh-linux]
+command = "C:\\path\\to\\python.exe"
+args = ["-m", "ssh_linux_mcp"]
+startup_timeout_sec = 30
+tool_timeout_sec = 300
+[mcp_servers.ssh-linux.env]
+PYTHONPATH = "C:\\path\\to\\MCP\\ssh-linux-mcp\\src"
+PYTHONIOENCODING = "utf-8"
+PYTHONUNBUFFERED = "1"
+
+[mcp_servers.ssh-winserver]
+command = "C:\\path\\to\\python.exe"
+args = ["-m", "ssh_winserver_mcp"]
+startup_timeout_sec = 30
+tool_timeout_sec = 300
+[mcp_servers.ssh-winserver.env]
+PYTHONPATH = "C:\\path\\to\\MCP\\ssh-winserver-mcp\\src"
+PYTHONIOENCODING = "utf-8"
+PYTHONUNBUFFERED = "1"
+
+[mcp_servers.windows-fleet]
+command = "C:\\path\\to\\python.exe"
+args = ["-m", "windows_fleet_mcp"]
+startup_timeout_sec = 30
+tool_timeout_sec = 300
+[mcp_servers.windows-fleet.env]
+PYTHONPATH = "C:\\path\\to\\MCP\\windows-fleet-mcp\\src"
+PYTHONIOENCODING = "utf-8"
+PYTHONUNBUFFERED = "1"
+
+[mcp_servers.windows-server-admin]
+command = "C:\\path\\to\\python.exe"
+args = ["-m", "windows_server_admin_mcp.server"]
+startup_timeout_sec = 30
+tool_timeout_sec = 300
+[mcp_servers.windows-server-admin.env]
+PYTHONPATH = "C:\\path\\to\\MCP\\windows-server-admin-mcp\\src"
+PYTHONIOENCODING = "utf-8"
+PYTHONUNBUFFERED = "1"
+WSA_MCP_CONFIG_DIR = "C:\\path\\to\\MCP\\windows-server-admin-mcp\\config"
+
+[mcp_servers.wsl]
+command = "C:\\path\\to\\python.exe"
+args = ["-m", "wsl_mcp"]
+startup_timeout_sec = 30
+tool_timeout_sec = 300
+[mcp_servers.wsl.env]
+PYTHONPATH = "C:\\path\\to\\MCP\\wsl-mcp\\src"
+PYTHONIOENCODING = "utf-8"
+PYTHONUNBUFFERED = "1"
+
+[mcp_servers.multi-postgres]
+command = "node"
+args = ["C:\\path\\to\\MCP\\multi-postgres-mcp\\dist\\src\\index.js"]
+startup_timeout_sec = 30
+tool_timeout_sec = 300
+[mcp_servers.multi-postgres.env]
+PG_MCP_CONFIG = "C:\\path\\to\\MCP\\multi-postgres-mcp\\config\\databases.yaml"
+
+[mcp_servers.multi-mariadb]
+command = "node"
+args = ["C:\\path\\to\\MCP\\multi-mariadb-mcp\\dist\\src\\index.js"]
+startup_timeout_sec = 30
+tool_timeout_sec = 300
+[mcp_servers.multi-mariadb.env]
+MARIADB_MCP_CONFIG = "C:\\path\\to\\MCP\\multi-mariadb-mcp\\config\\databases.yaml"
+
+[mcp_servers.windows-admin]
+command = "node"
+args = ["C:\\path\\to\\MCP\\windows-admin-mcp\\dist\\src\\index.js"]
+startup_timeout_sec = 30
+tool_timeout_sec = 300
+[mcp_servers.windows-admin.env]
+WINMCP_CONFIG = "C:\\path\\to\\MCP\\windows-admin-mcp\\config\\servers.json"
+WINMCP_AUDIT_DIR = "C:\\path\\to\\MCP\\windows-admin-mcp\\logs\\audit"
+
+[mcp_servers.gitlab]
+command = "node"
+args = ["C:\\path\\to\\MCP\\gitlab-mcp\\scripts\\launch.mjs"]
+startup_timeout_sec = 30
+tool_timeout_sec = 300

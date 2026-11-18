@@ -1,0 +1,31 @@
+{
+  "_comment": "Fuente única para generate.py. Placeholders: {python}, {node}, {dir} (carpeta del MCP), {sep}.",
+  "servers": {
+    "mssql":                { "folder": "mssql-mcp",                "python_module": "mssql_mcp" },
+    "opt-mssql":            { "folder": "opt-mssql-mcp",            "python_module": "opt_mssql_mcp" },
+    "fabric":               { "folder": "fabric-mcp",               "python_module": "fabric_mcp" },
+    "fabric-cli":           { "folder": "fabric-cli-mcp",           "python_module": "fabric_cli_mcp" },
+    "oss-fm-oracle":        { "folder": "oss-fm-oracle-mcp",        "python_module": "oss_fm_oracle_mcp" },
+    "nifi":                 { "folder": "nifi-mcp",                 "python_module": "nifi_mcp" },
+    "s3":                   { "folder": "s3-mcp",                   "python_module": "s3_mcp" },
+    "unc-fs":               { "folder": "unc-fs-mcp",               "python_module": "unc_fs_mcp" },
+    "ssh-linux":            { "folder": "ssh-linux-mcp",            "python_module": "ssh_linux_mcp" },
+    "ssh-winserver":        { "folder": "ssh-winserver-mcp",        "python_module": "ssh_winserver_mcp" },
+    "windows-fleet":        { "folder": "windows-fleet-mcp",        "python_module": "windows_fleet_mcp" },
+    "windows-server-admin": { "folder": "windows-server-admin-mcp", "python_module": "windows_server_admin_mcp.server",
+                              "env": { "WSA_MCP_CONFIG_DIR": "{dir}{sep}config" } },
+    "wsl":                  { "folder": "wsl-mcp",                  "python_module": "wsl_mcp" },
+    "multi-postgres":       { "folder": "multi-postgres-mcp",       "node_script": "dist/src/index.js",
+                              "env": { "PG_MCP_CONFIG": "{dir}{sep}config{sep}databases.yaml" },
+                              "build": "npm install && npm run build" },
+    "multi-mariadb":        { "folder": "multi-mariadb-mcp",        "node_script": "dist/src/index.js",
+                              "env": { "MARIADB_MCP_CONFIG": "{dir}{sep}config{sep}databases.yaml" },
+                              "build": "npm install && npm run build" },
+    "windows-admin":        { "folder": "windows-admin-mcp",        "node_script": "dist/src/index.js",
+                              "env": { "WINMCP_CONFIG": "{dir}{sep}config{sep}servers.json",
+                                       "WINMCP_AUDIT_DIR": "{dir}{sep}logs{sep}audit" },
+                              "build": "npm install && npm run build" },
+    "gitlab":               { "folder": "gitlab-mcp",               "node_script": "scripts/launch.mjs",
+                              "build": "npm install" }
+  }
+}
