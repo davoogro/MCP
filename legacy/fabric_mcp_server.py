@@ -122,7 +122,7 @@ logging.basicConfig(
     stream=sys.stderr,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
 )
-logger = logging.getLogger("fabric-mcp")
+logger = logging.getLogger("fabric-sql-mcp")
 
 pyodbc.pooling = CFG.pooling
 

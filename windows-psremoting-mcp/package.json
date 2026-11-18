@@ -1,0 +1,44 @@
+{
+  "name": "windows-psremoting-mcp",
+  "version": "1.1.0",
+  "description": "MCP server for controlled Windows Server administration via PowerShell remoting",
+  "type": "module",
+  "main": "dist/src/index.js",
+  "bin": {
+    "windows-psremoting-mcp": "dist/src/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/src/index.js",
+    "dev": "tsx src/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:integration": "cross-env RUN_WINMCP_INTEGRATION=1 vitest run tests/integration.test.ts",
+    "validate": "tsx scripts/validate-server.ts",
+    "doctor": "tsx scripts/validate-server.ts --skip-integration",
+    "lint": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "mcp",
+    "windows",
+    "powershell",
+    "winrm",
+    "model-context-protocol"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "dotenv": "^16.4.7",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.12.0",
+    "cross-env": "^7.0.3",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5"
+  }
+}

@@ -1,7 +1,7 @@
 # wsl-mcp — empaquetar y mejorar (lee antes C:\DVB\mcp\_specs\COMMON.md)
 
 Hoy existe `C:\DVB\mcp\wsl_mcp_server.py` (archivo suelto, registrado y en uso). NO lo modifiques ni lo
-borres. Crea un paquete nuevo en `C:\DVB\mcp\wsl-mcp` con layout de `C:\DVB\mcp\unc-fs-mcp`
+borres. Crea un paquete nuevo en `C:\DVB\mcp\wsl-mcp` con layout de `C:\DVB\mcp\windows-fileshare-mcp`
 (`pyproject.toml`, `src/wsl_mcp/{__init__,__main__,config,ops,util,server}.py`, `tests/`, `README.md`,
 `.env.example`, `claude-mcp.example.json`), que porte TODAS las tools existentes con los mismos nombres y
 parámetros (lee el archivo suelto completo), cargando `C:\DVB\mcp\.env` igual que hoy (`WSL_*`).

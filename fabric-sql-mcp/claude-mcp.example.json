@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "fabric": {
+      "command": "C:\\DVB\\python\\python.exe",
+      "args": ["-m", "fabric_sql_mcp"],
+      "env": {
+        "PYTHONPATH": "C:\\DVB\\mcp\\fabric-sql-mcp\\src",
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUNBUFFERED": "1"
+      }
+    }
+  }
+}

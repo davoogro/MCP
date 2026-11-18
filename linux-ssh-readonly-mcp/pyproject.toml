@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "linux-ssh-readonly-mcp"
+version = "1.0.0"
+description = "MCP de solo lectura para servidores Linux vía SSH (paramiko) a través de un proxy SOCKS5"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Proprietary" }
+authors = [{ name = "DVB" }]
+dependencies = ["mcp>=2.0.0", "paramiko>=3.0", "PySocks>=1.7", "python-dotenv>=1.0"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+linux-ssh-readonly-mcp = "linux_ssh_readonly_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/linux_ssh_readonly_mcp"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"

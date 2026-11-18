@@ -1,0 +1,51 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "oracle-alarms-readonly-mcp"
+version = "0.2.0"
+description = "MCP de solo lectura para las 6 instancias Oracle de alarmas OSS FM"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Proprietary" }
+authors = [{ name = "DVB" }]
+dependencies = [
+    "mcp>=2,<3",
+    "oracledb>=2.0.0",
+    "python-dotenv>=1.0.0",
+    "sqlparse>=0.5.0",
+    "pyarrow>=15.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "ruff>=0.4",
+]
+
+[project.scripts]
+oracle-alarms-readonly-mcp = "oracle_alarms_readonly_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/oracle_alarms_readonly_mcp"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "src/oracle_alarms_readonly_mcp",
+  "tests",
+  "docs",
+  "README.md",
+  ".env.example",
+  "cursor-mcp.example.json",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra --strict-markers"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

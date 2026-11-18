@@ -1,160 +1,160 @@
 {
   "mcpServers": {
-    "mssql": {
+    "sqlserver-readonly": {
       "type": "stdio",
       "command": "C:\\path\\to\\python.exe",
       "args": [
         "-m",
-        "mssql_mcp"
+        "sqlserver_readonly_mcp"
       ],
       "env": {
-        "PYTHONPATH": "C:\\path\\to\\MCP\\mssql-mcp\\src",
+        "PYTHONPATH": "C:\\path\\to\\MCP\\sqlserver-readonly-mcp\\src",
         "PYTHONIOENCODING": "utf-8",
         "PYTHONUNBUFFERED": "1"
       }
     },
-    "opt-mssql": {
+    "sqlserver-readwrite": {
       "type": "stdio",
       "command": "C:\\path\\to\\python.exe",
       "args": [
         "-m",
-        "opt_mssql_mcp"
+        "sqlserver_readwrite_mcp"
       ],
       "env": {
-        "PYTHONPATH": "C:\\path\\to\\MCP\\opt-mssql-mcp\\src",
+        "PYTHONPATH": "C:\\path\\to\\MCP\\sqlserver-readwrite-mcp\\src",
         "PYTHONIOENCODING": "utf-8",
         "PYTHONUNBUFFERED": "1"
       }
     },
-    "fabric": {
+    "fabric-sql": {
       "type": "stdio",
       "command": "C:\\path\\to\\python.exe",
       "args": [
         "-m",
-        "fabric_mcp"
+        "fabric_sql_mcp"
       ],
       "env": {
-        "PYTHONPATH": "C:\\path\\to\\MCP\\fabric-mcp\\src",
+        "PYTHONPATH": "C:\\path\\to\\MCP\\fabric-sql-mcp\\src",
         "PYTHONIOENCODING": "utf-8",
         "PYTHONUNBUFFERED": "1"
       }
     },
-    "fabric-cli": {
+    "fabric-admin": {
       "type": "stdio",
       "command": "C:\\path\\to\\python.exe",
       "args": [
         "-m",
-        "fabric_cli_mcp"
+        "fabric_admin_mcp"
       ],
       "env": {
-        "PYTHONPATH": "C:\\path\\to\\MCP\\fabric-cli-mcp\\src",
+        "PYTHONPATH": "C:\\path\\to\\MCP\\fabric-admin-mcp\\src",
         "PYTHONIOENCODING": "utf-8",
         "PYTHONUNBUFFERED": "1"
       }
     },
-    "oss-fm-oracle": {
+    "oracle-alarms-readonly": {
       "type": "stdio",
       "command": "C:\\path\\to\\python.exe",
       "args": [
         "-m",
-        "oss_fm_oracle_mcp"
+        "oracle_alarms_readonly_mcp"
       ],
       "env": {
-        "PYTHONPATH": "C:\\path\\to\\MCP\\oss-fm-oracle-mcp\\src",
+        "PYTHONPATH": "C:\\path\\to\\MCP\\oracle-alarms-readonly-mcp\\src",
         "PYTHONIOENCODING": "utf-8",
         "PYTHONUNBUFFERED": "1"
       }
     },
-    "nifi": {
+    "nifi-readonly": {
       "type": "stdio",
       "command": "C:\\path\\to\\python.exe",
       "args": [
         "-m",
-        "nifi_mcp"
+        "nifi_readonly_mcp"
       ],
       "env": {
-        "PYTHONPATH": "C:\\path\\to\\MCP\\nifi-mcp\\src",
+        "PYTHONPATH": "C:\\path\\to\\MCP\\nifi-readonly-mcp\\src",
         "PYTHONIOENCODING": "utf-8",
         "PYTHONUNBUFFERED": "1"
       }
     },
-    "s3": {
+    "s3-readonly": {
       "type": "stdio",
       "command": "C:\\path\\to\\python.exe",
       "args": [
         "-m",
-        "s3_mcp"
+        "s3_readonly_mcp"
       ],
       "env": {
-        "PYTHONPATH": "C:\\path\\to\\MCP\\s3-mcp\\src",
+        "PYTHONPATH": "C:\\path\\to\\MCP\\s3-readonly-mcp\\src",
         "PYTHONIOENCODING": "utf-8",
         "PYTHONUNBUFFERED": "1"
       }
     },
-    "unc-fs": {
+    "windows-fileshare": {
       "type": "stdio",
       "command": "C:\\path\\to\\python.exe",
       "args": [
         "-m",
-        "unc_fs_mcp"
+        "windows_fileshare_mcp"
       ],
       "env": {
-        "PYTHONPATH": "C:\\path\\to\\MCP\\unc-fs-mcp\\src",
+        "PYTHONPATH": "C:\\path\\to\\MCP\\windows-fileshare-mcp\\src",
         "PYTHONIOENCODING": "utf-8",
         "PYTHONUNBUFFERED": "1"
       }
     },
-    "ssh-linux": {
+    "linux-ssh-readonly": {
       "type": "stdio",
       "command": "C:\\path\\to\\python.exe",
       "args": [
         "-m",
-        "ssh_linux_mcp"
+        "linux_ssh_readonly_mcp"
       ],
       "env": {
-        "PYTHONPATH": "C:\\path\\to\\MCP\\ssh-linux-mcp\\src",
+        "PYTHONPATH": "C:\\path\\to\\MCP\\linux-ssh-readonly-mcp\\src",
         "PYTHONIOENCODING": "utf-8",
         "PYTHONUNBUFFERED": "1"
       }
     },
-    "ssh-winserver": {
+    "windows-ssh-admin": {
       "type": "stdio",
       "command": "C:\\path\\to\\python.exe",
       "args": [
         "-m",
-        "ssh_winserver_mcp"
+        "windows_ssh_admin_mcp"
       ],
       "env": {
-        "PYTHONPATH": "C:\\path\\to\\MCP\\ssh-winserver-mcp\\src",
+        "PYTHONPATH": "C:\\path\\to\\MCP\\windows-ssh-admin-mcp\\src",
         "PYTHONIOENCODING": "utf-8",
         "PYTHONUNBUFFERED": "1"
       }
     },
-    "windows-fleet": {
+    "windows-winrm-fleet": {
       "type": "stdio",
       "command": "C:\\path\\to\\python.exe",
       "args": [
         "-m",
-        "windows_fleet_mcp"
+        "windows_winrm_fleet_mcp"
       ],
       "env": {
-        "PYTHONPATH": "C:\\path\\to\\MCP\\windows-fleet-mcp\\src",
+        "PYTHONPATH": "C:\\path\\to\\MCP\\windows-winrm-fleet-mcp\\src",
         "PYTHONIOENCODING": "utf-8",
         "PYTHONUNBUFFERED": "1"
       }
     },
-    "windows-server-admin": {
+    "windows-guarded-admin": {
       "type": "stdio",
       "command": "C:\\path\\to\\python.exe",
       "args": [
         "-m",
-        "windows_server_admin_mcp.server"
+        "windows_guarded_admin_mcp.server"
       ],
       "env": {
-        "PYTHONPATH": "C:\\path\\to\\MCP\\windows-server-admin-mcp\\src",
+        "PYTHONPATH": "C:\\path\\to\\MCP\\windows-guarded-admin-mcp\\src",
         "PYTHONIOENCODING": "utf-8",
         "PYTHONUNBUFFERED": "1",
-        "WSA_MCP_CONFIG_DIR": "C:\\path\\to\\MCP\\windows-server-admin-mcp\\config"
+        "WSA_MCP_CONFIG_DIR": "C:\\path\\to\\MCP\\windows-guarded-admin-mcp\\config"
       }
     },
     "wsl": {
@@ -170,60 +170,60 @@
         "PYTHONUNBUFFERED": "1"
       }
     },
-    "multi-postgres": {
+    "postgres-readonly": {
       "type": "stdio",
       "command": "node",
       "args": [
-        "C:\\path\\to\\MCP\\multi-postgres-mcp\\dist\\src\\index.js"
+        "C:\\path\\to\\MCP\\postgres-readonly-mcp\\dist\\src\\index.js"
       ],
       "env": {
-        "PG_MCP_CONFIG": "C:\\path\\to\\MCP\\multi-postgres-mcp\\config\\databases.yaml"
+        "PG_MCP_CONFIG": "C:\\path\\to\\MCP\\postgres-readonly-mcp\\config\\databases.yaml"
       }
     },
-    "multi-mariadb": {
+    "mariadb-readonly": {
       "type": "stdio",
       "command": "node",
       "args": [
-        "C:\\path\\to\\MCP\\multi-mariadb-mcp\\dist\\src\\index.js"
+        "C:\\path\\to\\MCP\\mariadb-readonly-mcp\\dist\\src\\index.js"
       ],
       "env": {
-        "MARIADB_MCP_CONFIG": "C:\\path\\to\\MCP\\multi-mariadb-mcp\\config\\databases.yaml"
+        "MARIADB_MCP_CONFIG": "C:\\path\\to\\MCP\\mariadb-readonly-mcp\\config\\databases.yaml"
       }
     },
-    "windows-admin": {
+    "windows-psremoting": {
       "type": "stdio",
       "command": "node",
       "args": [
-        "C:\\path\\to\\MCP\\windows-admin-mcp\\dist\\src\\index.js"
+        "C:\\path\\to\\MCP\\windows-psremoting-mcp\\dist\\src\\index.js"
       ],
       "env": {
-        "WINMCP_CONFIG": "C:\\path\\to\\MCP\\windows-admin-mcp\\config\\servers.json",
-        "WINMCP_AUDIT_DIR": "C:\\path\\to\\MCP\\windows-admin-mcp\\logs\\audit"
+        "WINMCP_CONFIG": "C:\\path\\to\\MCP\\windows-psremoting-mcp\\config\\servers.json",
+        "WINMCP_AUDIT_DIR": "C:\\path\\to\\MCP\\windows-psremoting-mcp\\logs\\audit"
       }
     },
-    "gitlab": {
+    "gitlab-selfhosted": {
       "type": "stdio",
       "command": "node",
       "args": [
-        "C:\\path\\to\\MCP\\gitlab-mcp\\scripts\\launch.mjs"
+        "C:\\path\\to\\MCP\\gitlab-selfhosted-mcp\\scripts\\launch.mjs"
       ]
     },
-    "aws-data": {
+    "athena-quicksight": {
       "type": "stdio",
       "command": "C:\\path\\to\\python.exe",
       "args": [
-        "C:\\path\\to\\MCP\\aws-data-mcp\\athena_mcp_server.py"
+        "C:\\path\\to\\MCP\\athena-quicksight-mcp\\athena_mcp_server.py"
       ],
       "env": {
         "PYTHONIOENCODING": "utf-8",
         "PYTHONUNBUFFERED": "1"
       }
     },
-    "redshift": {
+    "redshift-readonly": {
       "type": "stdio",
       "command": "C:\\path\\to\\python.exe",
       "args": [
-        "C:\\path\\to\\MCP\\redshift-mcp\\redshift_mcp_server.py"
+        "C:\\path\\to\\MCP\\redshift-readonly-mcp\\redshift_mcp_server.py"
       ],
       "env": {
         "PYTHONIOENCODING": "utf-8",
@@ -252,11 +252,11 @@
         "PYTHONUNBUFFERED": "1"
       }
     },
-    "ssh-multiserver": {
+    "ssh-inventory": {
       "type": "stdio",
       "command": "node",
       "args": [
-        "C:\\path\\to\\MCP\\ssh-multiserver-mcp\\index.js"
+        "C:\\path\\to\\MCP\\ssh-inventory-mcp\\index.js"
       ]
     }
   }

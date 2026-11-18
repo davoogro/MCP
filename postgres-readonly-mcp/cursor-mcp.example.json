@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "postgres-readonly": {
+      "command": "node",
+      "args": [
+        "C:\\DVB\\mcp\\postgres-readonly-mcp\\dist\\src\\index.js"
+      ],
+      "env": {
+        "PG_MCP_CONFIG": "C:\\DVB\\mcp\\postgres-readonly-mcp\\config\\databases.yaml",
+        "TEST_POSTGRES_USER": "your_readonly_user",
+        "TEST_POSTGRES_PASSWORD": "your_password"
+      }
+    }
+  }
+}

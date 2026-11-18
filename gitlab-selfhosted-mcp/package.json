@@ -1,0 +1,11 @@
+{
+  "name": "gitlab-selfhosted-mcp",
+  "private": true,
+  "description": "Local wrapper for @zereight/mcp-gitlab against gitlab.example.com",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@zereight/mcp-gitlab": "2.1.52"
+  }
+}

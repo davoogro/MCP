@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "s3": {
+      "command": "C:\\DVB\\python\\python.exe",
+      "args": ["-m", "s3_readonly_mcp"],
+      "env": {
+        "PYTHONPATH": "C:\\DVB\\mcp\\s3-readonly-mcp\\src",
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUNBUFFERED": "1"
+      }
+    }
+  }
+}

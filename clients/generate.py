@@ -8,10 +8,10 @@ Ejemplos:
   python clients/generate.py --root C:\\DVB\\mcp --python C:\\DVB\\python\\python.exe
 
   # Solo algunos servidores y clientes
-  python clients/generate.py --only mssql,s3,wsl --client cursor,codex
+  python clients/generate.py --only sqlserver-readonly,s3-readonly,wsl --client cursor,codex
 
   # Fusionar directamente en la config de usuario de cada cliente (hace backup .bak-<fecha>)
-  python clients/generate.py --only mssql,s3 --client cursor,kiro,codex --install
+  python clients/generate.py --only sqlserver-readonly,s3-readonly --client cursor,kiro,codex --install
 
 Solo usa la librería estándar. Las credenciales NO van aquí: cada MCP lee su propio .env
 (en su carpeta) o sus config/*.yaml.

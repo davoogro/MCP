@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local/windows-psremoting-mcp/servers.schema.json",
+  "title": "Windows Admin MCP Server Allowlist",
+  "type": "object",
+  "required": ["defaults", "servers"],
+  "additionalProperties": false,
+  "properties": {
+    "defaults": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "connectionTimeoutSeconds": { "type": "integer", "minimum": 1, "maximum": 300 },
+        "operationTimeoutSeconds": { "type": "integer", "minimum": 1, "maximum": 3600 },
+        "rebootTimeoutSeconds": { "type": "integer", "minimum": 30, "maximum": 7200 },
+        "maxConcurrency": { "type": "integer", "minimum": 1, "maximum": 20 },
+        "verifyTls": { "type": "boolean" },
+        "allowParallelReboot": { "type": "boolean" },
+        "maxParallelReboot": { "type": "integer", "minimum": 1, "maximum": 5 }
+      }
+    },
+    "servers": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/serverEntry" }
+    }
+  },
+  "$defs": {
+    "serverEntry": {
+      "type": "object",
+      "required": ["name", "address"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string", "pattern": "^[A-Z0-9][A-Z0-9_-]{0,62}$" },
+        "address": { "type": "string", "minLength": 1 },
+        "transport": { "enum": ["auto", "ssh", "winrm"] },
+        "port": { "type": ["integer", "null"], "minimum": 1, "maximum": 65535 },
+        "allowReboot": { "type": "boolean", "default": false },
+        "protectedRole": { "type": "boolean", "default": false },
+        "allowProtectedReboot": { "type": "boolean", "default": false },
+        "allowServiceRestart": { "type": "boolean", "default": false },
+        "allowForceReboot": { "type": "boolean", "default": false },
+        "criticalServices": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[A-Za-z0-9_.-]{1,256}$" }
+        },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "credentialTargetEnv": { "type": "string" },
+        "usernameEnv": { "type": "string" },
+        "passwordEnv": { "type": "string" },
+        "secretVault": { "type": "string" },
+        "usernameSecret": { "type": "string" },
+        "passwordSecret": { "type": "string" },
+        "sshKeyPathEnv": { "type": "string" },
+        "winrmCertThumbprintEnv": { "type": "string" }
+      }
+    }
+  }
+}

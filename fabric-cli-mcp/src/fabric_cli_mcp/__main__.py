@@ -1,6 +1,0 @@
-import sys
-
-from fabric_cli_mcp.server import main
-
-if __name__ == "__main__":
-    sys.exit(main())

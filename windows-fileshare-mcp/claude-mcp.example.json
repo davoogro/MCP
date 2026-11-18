@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "windows-fileshare": {
+      "command": "C:\\DVB\\python\\python.exe",
+      "args": ["-m", "windows_fileshare_mcp"],
+      "env": {
+        "PYTHONPATH": "C:\\DVB\\mcp\\windows-fileshare-mcp\\src",
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUNBUFFERED": "1"
+      }
+    }
+  }
+}

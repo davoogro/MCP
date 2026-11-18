@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "windows-winrm-fleet": {
+      "command": "C:\\DVB\\python\\python.exe",
+      "args": ["-m", "windows_winrm_fleet_mcp"],
+      "cwd": "C:\\DVB\\mcp\\windows-winrm-fleet-mcp",
+      "env": {
+        "PYTHONPATH": "C:\\DVB\\mcp\\windows-winrm-fleet-mcp\\src"
+      }
+    }
+  }
+}

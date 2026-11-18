@@ -25,10 +25,10 @@ python clients\generate.py --list
 python clients\generate.py --root C:\DVB\mcp --python C:\DVB\python\python.exe
 
 # Solo algunos servidores y clientes
-python clients\generate.py --only mssql,s3,wsl --client cursor,kiro,codex
+python clients\generate.py --only sqlserver-readonly,s3-readonly,wsl --client cursor,kiro,codex
 
 # Fusionar directamente en la config de usuario de cada cliente
-python clients\generate.py --only mssql,s3 --client cursor,kiro,codex,vscode,claude-desktop --install
+python clients\generate.py --only sqlserver-readonly,s3-readonly --client cursor,kiro,codex,vscode,claude-desktop --install
 ```
 
 | Opción | Default | |
@@ -62,8 +62,8 @@ sin exponer contraseñas.
 ## Antes de usarlos
 
 - **Python**: instala las dependencias de cada MCP (`pip install -e <carpeta>`) en el Python que pases en `--python`.
-- **Node** (`multi-postgres`, `multi-mariadb`, `windows-admin`): `npm install && npm run build` en su carpeta.
-- **gitlab**: `npm install` en `gitlab-mcp`.
+- **Node** (`postgres-readonly`, `mariadb-readonly`, `windows-psremoting`): `npm install && npm run build` en su carpeta.
+- **gitlab**: `npm install` en `gitlab-selfhosted-mcp`.
 
 ## Agregar un MCP nuevo
 

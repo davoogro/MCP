@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "sqlserver-readwrite": {
+      "type": "stdio",
+      "command": "C:\\DVB\\python\\python.exe",
+      "args": ["-m", "sqlserver_readwrite_mcp"],
+      "env": {
+        "PYTHONPATH": "C:\\DVB\\mcp\\sqlserver-readwrite-mcp\\src",
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUNBUFFERED": "1"
+      }
+    }
+  }
+}

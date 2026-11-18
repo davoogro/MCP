@@ -1,22 +1,22 @@
-# Spec: ssh-linux-mcp (SOLO LECTURA)
+# Spec: linux-ssh-readonly-mcp (SOLO LECTURA)
 
-Construir un MCP server Python en `C:\DVB\mcp\ssh-linux-mcp`, paquete `src/ssh_linux_mcp`, que da acceso
+Construir un MCP server Python en `C:\DVB\mcp\linux-ssh-readonly-mcp`, paquete `src/linux_ssh_readonly_mcp`, que da acceso
 de **solo lectura** a servidores Linux por SSH a través de un proxy SOCKS5 local. Idioma de docstrings,
 mensajes e instrucciones: español (como los otros MCP de C:\DVB\mcp).
 
-## Imitar el estilo de `C:\DVB\mcp\ssh-winserver-mcp`
-Leer primero `ssh-winserver-mcp/src/ssh_winserver_mcp/{server.py,config.py,__main__.py}`, `pyproject.toml`,
+## Imitar el estilo de `C:\DVB\mcp\windows-ssh-admin-mcp`
+Leer primero `windows-ssh-admin-mcp/src/windows_ssh_admin_mcp/{server.py,config.py,__main__.py}`, `pyproject.toml`,
 `registrar.ps1` y `README.md` y copiar su estructura: `from mcp.server import MCPServer`,
 `mcp.types.ToolAnnotations` (todas las tools con anotación read-only), logging a stderr, `__version__`
 en `__init__.py`, `__main__.py`, modos CLI `--test [host]` y `--handshake`, audit log JSONL en
-`%LOCALAPPDATA%\ssh-linux-mcp\audit.jsonl`, recorte de respuestas a `SSHLX_MAX_CHARS` (default 60000),
+`%LOCALAPPDATA%\linux-ssh-readonly-mcp\audit.jsonl`, recorte de respuestas a `SSHLX_MAX_CHARS` (default 60000),
 tools síncronas bloqueantes ejecutadas con `asyncio.to_thread`.
 
 ## Entorno
 - Python: `C:\DVB\python\python.exe` (3.14). Librerías ya instaladas: `paramiko`, `PySocks` (`socks`),
   `python-dotenv`, `mcp`. No instalar nada más.
 - Credenciales: variables `LINUX_SSH_USER` y `LINUX_SSH_PASSWORD` del `.env` compartido `C:\DVB\mcp\.env`. Cargar con
-  `load_dotenv(override=False)` desde `ssh-linux-mcp/.env` (si existe), luego `C:\DVB\mcp\.env`, y
+  `load_dotenv(override=False)` desde `linux-ssh-readonly-mcp/.env` (si existe), luego `C:\DVB\mcp\.env`, y
   `SSHLX_ENV_FILE` si está definida. Nunca loguear ni devolver la contraseña.
 
 ## Configuración `config/hosts.json`
@@ -41,7 +41,7 @@ tools síncronas bloqueantes ejecutadas con `asyncio.to_thread`.
 - Un `paramiko.SSHClient` persistente por host, protegido con `threading.Lock`; socket creado con
   `socks.socksocket()` + `set_proxy(socks.SOCKS5, host, port, rdns=True)`, timeout de conexión 20 s.
   `allow_agent=False, look_for_keys=False`. Keepalive 15 s (`transport.set_keepalive`).
-- Host keys: guardar en `%LOCALAPPDATA%\ssh-linux-mcp\known_hosts`. Primera vez: aceptar y guardar
+- Host keys: guardar en `%LOCALAPPDATA%\linux-ssh-readonly-mcp\known_hosts`. Primera vez: aceptar y guardar
   (log de advertencia con la huella); luego, si cambia, rechazar con error claro.
 - Si la conexión está caída o falla un comando por error de transporte, reconectar una vez y reintentar.
 - `run(cmd, timeout_s)` -> exit_code, stdout, stderr, duración. Anteponer internamente `LC_ALL=C ` y
@@ -123,11 +123,11 @@ para que los operadores fuera de comillas queden como tokens propios.
     `journalctl --no-pager -n N [-u] [--since] [--until] [-p] [-g]` (RHEL7 journalctl no tiene `-g`:
     si grep, usar `| grep -E`). Avisar que sin permisos de grupo `systemd-journal` puede salir vacío.
 17. `download_file(remote_path, host, local_dir=None)` — SFTP `get` a local
-    (`SSHLX_TRANSFER_DIR`, default `C:\DVB\exports\ssh-linux\<host>\`); límite 500 MB; devuelve ruta local y tamaño.
+    (`SSHLX_TRANSFER_DIR`, default `C:\DVB\exports\linux-ssh-readonly\<host>\`); límite 500 MB; devuelve ruta local y tamaño.
 18. `query_audit_log(limit=50, tool=None)`.
 
 Las tools estructuradas construyen comandos internamente; también deben pasar por `readonly.validate`
-(defensa en profundidad). Errores devueltos como `{"ok": false, "error": "..."}` igual que ssh-winserver.
+(defensa en profundidad). Errores devueltos como `{"ok": false, "error": "..."}` igual que windows-ssh-admin.
 
 ## Instrucciones del MCP
 Texto en español: solo lectura, hosts disponibles (desde config), proxy SOCKS 127.0.0.1:18080 debe
@@ -137,8 +137,8 @@ resumen de la política de solo lectura.
 
 ## Extras
 - `pyproject.toml` (deps: mcp, paramiko, PySocks, python-dotenv), `README.md` breve,
-  `registrar.ps1` igual al de ssh-winserver pero con nombre `ssh-linux`, módulo `ssh_linux_mcp`,
-  `PYTHONPATH=C:\DVB\mcp\ssh-linux-mcp\src`.
+  `registrar.ps1` igual al de windows-ssh-admin pero con nombre `linux-ssh-readonly`, módulo `linux_ssh_readonly_mcp`,
+  `PYTHONPATH=C:\DVB\mcp\linux-ssh-readonly-mcp\src`.
 - `tests/test_readonly.py` (pytest) con al menos 40 casos: permitidos (`ls -la /opt | grep x`,
   `ps aux | sort -k3 -rn | head`, `cat /etc/hosts 2>/dev/null`, `grep 'a>b' file`, `awk '{print $1}' f`,
   `find /var/log -name '*.log' -mtime -1`, `systemctl status sshd`, `journalctl -u sshd -n 50`,
@@ -148,5 +148,5 @@ resumen de la política de solo lectura.
   `FOO=1 ls`, `ls &`, `crontab -r`, `rpm -e pkg`, `curl -o f http://x`, `wget http://x`, `tar -xf a.tar`,
   `python -c 1`, `bash -c ls`, `xargs rm`, `date -s 2020-01-01`, `ip link set eth0 down`, `kill 1`).
 - NO tocar `~/.claude.json` ni ejecutar registrar.ps1. NO conectarse al servidor (lo verificaré yo).
-- Al terminar, correr `C:\DVB\python\python.exe -m pytest C:\DVB\mcp\ssh-linux-mcp\tests -q` y
-  `python -m ssh_linux_mcp --handshake` (con PYTHONPATH) y dejar todo pasando.
+- Al terminar, correr `C:\DVB\python\python.exe -m pytest C:\DVB\mcp\linux-ssh-readonly-mcp\tests -q` y
+  `python -m linux_ssh_readonly_mcp --handshake` (con PYTHONPATH) y dejar todo pasando.

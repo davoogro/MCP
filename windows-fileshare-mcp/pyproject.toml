@@ -1,0 +1,34 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "windows-fileshare-mcp"
+version = "1.0.0"
+description = "Servidor MCP para directorios UNC de Windows (listar, leer, buscar; escritura opcional)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Proprietary" }
+authors = [{ name = "DVB" }]
+dependencies = [
+    "mcp>=2.0.0",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.4"]
+
+[project.scripts]
+windows-fileshare-mcp = "windows_fileshare_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/windows_fileshare_mcp"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra --strict-markers"
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"

@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "mariadb-readonly": {
+      "command": "node",
+      "args": [
+        "C:\\DVB\\mcp\\mariadb-readonly-mcp\\dist\\src\\index.js"
+      ],
+      "env": {
+        "MARIADB_MCP_CONFIG": "C:\\DVB\\mcp\\mariadb-readonly-mcp\\config\\databases.yaml"
+      }
+    }
+  }
+}

@@ -1,125 +1,125 @@
 # Pegar en ~/.codex/config.toml (o usar --install)
 
-[mcp_servers.mssql]
+[mcp_servers.sqlserver-readonly]
 command = "C:\\path\\to\\python.exe"
-args = ["-m", "mssql_mcp"]
+args = ["-m", "sqlserver_readonly_mcp"]
 startup_timeout_sec = 30
 tool_timeout_sec = 300
-[mcp_servers.mssql.env]
-PYTHONPATH = "C:\\path\\to\\MCP\\mssql-mcp\\src"
+[mcp_servers.sqlserver-readonly.env]
+PYTHONPATH = "C:\\path\\to\\MCP\\sqlserver-readonly-mcp\\src"
 PYTHONIOENCODING = "utf-8"
 PYTHONUNBUFFERED = "1"
 
-[mcp_servers.opt-mssql]
+[mcp_servers.sqlserver-readwrite]
 command = "C:\\path\\to\\python.exe"
-args = ["-m", "opt_mssql_mcp"]
+args = ["-m", "sqlserver_readwrite_mcp"]
 startup_timeout_sec = 30
 tool_timeout_sec = 300
-[mcp_servers.opt-mssql.env]
-PYTHONPATH = "C:\\path\\to\\MCP\\opt-mssql-mcp\\src"
+[mcp_servers.sqlserver-readwrite.env]
+PYTHONPATH = "C:\\path\\to\\MCP\\sqlserver-readwrite-mcp\\src"
 PYTHONIOENCODING = "utf-8"
 PYTHONUNBUFFERED = "1"
 
-[mcp_servers.fabric]
+[mcp_servers.fabric-sql]
 command = "C:\\path\\to\\python.exe"
-args = ["-m", "fabric_mcp"]
+args = ["-m", "fabric_sql_mcp"]
 startup_timeout_sec = 30
 tool_timeout_sec = 300
-[mcp_servers.fabric.env]
-PYTHONPATH = "C:\\path\\to\\MCP\\fabric-mcp\\src"
+[mcp_servers.fabric-sql.env]
+PYTHONPATH = "C:\\path\\to\\MCP\\fabric-sql-mcp\\src"
 PYTHONIOENCODING = "utf-8"
 PYTHONUNBUFFERED = "1"
 
-[mcp_servers.fabric-cli]
+[mcp_servers.fabric-admin]
 command = "C:\\path\\to\\python.exe"
-args = ["-m", "fabric_cli_mcp"]
+args = ["-m", "fabric_admin_mcp"]
 startup_timeout_sec = 30
 tool_timeout_sec = 300
-[mcp_servers.fabric-cli.env]
-PYTHONPATH = "C:\\path\\to\\MCP\\fabric-cli-mcp\\src"
+[mcp_servers.fabric-admin.env]
+PYTHONPATH = "C:\\path\\to\\MCP\\fabric-admin-mcp\\src"
 PYTHONIOENCODING = "utf-8"
 PYTHONUNBUFFERED = "1"
 
-[mcp_servers.oss-fm-oracle]
+[mcp_servers.oracle-alarms-readonly]
 command = "C:\\path\\to\\python.exe"
-args = ["-m", "oss_fm_oracle_mcp"]
+args = ["-m", "oracle_alarms_readonly_mcp"]
 startup_timeout_sec = 30
 tool_timeout_sec = 300
-[mcp_servers.oss-fm-oracle.env]
-PYTHONPATH = "C:\\path\\to\\MCP\\oss-fm-oracle-mcp\\src"
+[mcp_servers.oracle-alarms-readonly.env]
+PYTHONPATH = "C:\\path\\to\\MCP\\oracle-alarms-readonly-mcp\\src"
 PYTHONIOENCODING = "utf-8"
 PYTHONUNBUFFERED = "1"
 
-[mcp_servers.nifi]
+[mcp_servers.nifi-readonly]
 command = "C:\\path\\to\\python.exe"
-args = ["-m", "nifi_mcp"]
+args = ["-m", "nifi_readonly_mcp"]
 startup_timeout_sec = 30
 tool_timeout_sec = 300
-[mcp_servers.nifi.env]
-PYTHONPATH = "C:\\path\\to\\MCP\\nifi-mcp\\src"
+[mcp_servers.nifi-readonly.env]
+PYTHONPATH = "C:\\path\\to\\MCP\\nifi-readonly-mcp\\src"
 PYTHONIOENCODING = "utf-8"
 PYTHONUNBUFFERED = "1"
 
-[mcp_servers.s3]
+[mcp_servers.s3-readonly]
 command = "C:\\path\\to\\python.exe"
-args = ["-m", "s3_mcp"]
+args = ["-m", "s3_readonly_mcp"]
 startup_timeout_sec = 30
 tool_timeout_sec = 300
-[mcp_servers.s3.env]
-PYTHONPATH = "C:\\path\\to\\MCP\\s3-mcp\\src"
+[mcp_servers.s3-readonly.env]
+PYTHONPATH = "C:\\path\\to\\MCP\\s3-readonly-mcp\\src"
 PYTHONIOENCODING = "utf-8"
 PYTHONUNBUFFERED = "1"
 
-[mcp_servers.unc-fs]
+[mcp_servers.windows-fileshare]
 command = "C:\\path\\to\\python.exe"
-args = ["-m", "unc_fs_mcp"]
+args = ["-m", "windows_fileshare_mcp"]
 startup_timeout_sec = 30
 tool_timeout_sec = 300
-[mcp_servers.unc-fs.env]
-PYTHONPATH = "C:\\path\\to\\MCP\\unc-fs-mcp\\src"
+[mcp_servers.windows-fileshare.env]
+PYTHONPATH = "C:\\path\\to\\MCP\\windows-fileshare-mcp\\src"
 PYTHONIOENCODING = "utf-8"
 PYTHONUNBUFFERED = "1"
 
-[mcp_servers.ssh-linux]
+[mcp_servers.linux-ssh-readonly]
 command = "C:\\path\\to\\python.exe"
-args = ["-m", "ssh_linux_mcp"]
+args = ["-m", "linux_ssh_readonly_mcp"]
 startup_timeout_sec = 30
 tool_timeout_sec = 300
-[mcp_servers.ssh-linux.env]
-PYTHONPATH = "C:\\path\\to\\MCP\\ssh-linux-mcp\\src"
+[mcp_servers.linux-ssh-readonly.env]
+PYTHONPATH = "C:\\path\\to\\MCP\\linux-ssh-readonly-mcp\\src"
 PYTHONIOENCODING = "utf-8"
 PYTHONUNBUFFERED = "1"
 
-[mcp_servers.ssh-winserver]
+[mcp_servers.windows-ssh-admin]
 command = "C:\\path\\to\\python.exe"
-args = ["-m", "ssh_winserver_mcp"]
+args = ["-m", "windows_ssh_admin_mcp"]
 startup_timeout_sec = 30
 tool_timeout_sec = 300
-[mcp_servers.ssh-winserver.env]
-PYTHONPATH = "C:\\path\\to\\MCP\\ssh-winserver-mcp\\src"
+[mcp_servers.windows-ssh-admin.env]
+PYTHONPATH = "C:\\path\\to\\MCP\\windows-ssh-admin-mcp\\src"
 PYTHONIOENCODING = "utf-8"
 PYTHONUNBUFFERED = "1"
 
-[mcp_servers.windows-fleet]
+[mcp_servers.windows-winrm-fleet]
 command = "C:\\path\\to\\python.exe"
-args = ["-m", "windows_fleet_mcp"]
+args = ["-m", "windows_winrm_fleet_mcp"]
 startup_timeout_sec = 30
 tool_timeout_sec = 300
-[mcp_servers.windows-fleet.env]
-PYTHONPATH = "C:\\path\\to\\MCP\\windows-fleet-mcp\\src"
+[mcp_servers.windows-winrm-fleet.env]
+PYTHONPATH = "C:\\path\\to\\MCP\\windows-winrm-fleet-mcp\\src"
 PYTHONIOENCODING = "utf-8"
 PYTHONUNBUFFERED = "1"
 
-[mcp_servers.windows-server-admin]
+[mcp_servers.windows-guarded-admin]
 command = "C:\\path\\to\\python.exe"
-args = ["-m", "windows_server_admin_mcp.server"]
+args = ["-m", "windows_guarded_admin_mcp.server"]
 startup_timeout_sec = 30
 tool_timeout_sec = 300
-[mcp_servers.windows-server-admin.env]
-PYTHONPATH = "C:\\path\\to\\MCP\\windows-server-admin-mcp\\src"
+[mcp_servers.windows-guarded-admin.env]
+PYTHONPATH = "C:\\path\\to\\MCP\\windows-guarded-admin-mcp\\src"
 PYTHONIOENCODING = "utf-8"
 PYTHONUNBUFFERED = "1"
-WSA_MCP_CONFIG_DIR = "C:\\path\\to\\MCP\\windows-server-admin-mcp\\config"
+WSA_MCP_CONFIG_DIR = "C:\\path\\to\\MCP\\windows-guarded-admin-mcp\\config"
 
 [mcp_servers.wsl]
 command = "C:\\path\\to\\python.exe"
@@ -131,52 +131,52 @@ PYTHONPATH = "C:\\path\\to\\MCP\\wsl-mcp\\src"
 PYTHONIOENCODING = "utf-8"
 PYTHONUNBUFFERED = "1"
 
-[mcp_servers.multi-postgres]
+[mcp_servers.postgres-readonly]
 command = "node"
-args = ["C:\\path\\to\\MCP\\multi-postgres-mcp\\dist\\src\\index.js"]
+args = ["C:\\path\\to\\MCP\\postgres-readonly-mcp\\dist\\src\\index.js"]
 startup_timeout_sec = 30
 tool_timeout_sec = 300
-[mcp_servers.multi-postgres.env]
-PG_MCP_CONFIG = "C:\\path\\to\\MCP\\multi-postgres-mcp\\config\\databases.yaml"
+[mcp_servers.postgres-readonly.env]
+PG_MCP_CONFIG = "C:\\path\\to\\MCP\\postgres-readonly-mcp\\config\\databases.yaml"
 
-[mcp_servers.multi-mariadb]
+[mcp_servers.mariadb-readonly]
 command = "node"
-args = ["C:\\path\\to\\MCP\\multi-mariadb-mcp\\dist\\src\\index.js"]
+args = ["C:\\path\\to\\MCP\\mariadb-readonly-mcp\\dist\\src\\index.js"]
 startup_timeout_sec = 30
 tool_timeout_sec = 300
-[mcp_servers.multi-mariadb.env]
-MARIADB_MCP_CONFIG = "C:\\path\\to\\MCP\\multi-mariadb-mcp\\config\\databases.yaml"
+[mcp_servers.mariadb-readonly.env]
+MARIADB_MCP_CONFIG = "C:\\path\\to\\MCP\\mariadb-readonly-mcp\\config\\databases.yaml"
 
-[mcp_servers.windows-admin]
+[mcp_servers.windows-psremoting]
 command = "node"
-args = ["C:\\path\\to\\MCP\\windows-admin-mcp\\dist\\src\\index.js"]
+args = ["C:\\path\\to\\MCP\\windows-psremoting-mcp\\dist\\src\\index.js"]
 startup_timeout_sec = 30
 tool_timeout_sec = 300
-[mcp_servers.windows-admin.env]
-WINMCP_CONFIG = "C:\\path\\to\\MCP\\windows-admin-mcp\\config\\servers.json"
-WINMCP_AUDIT_DIR = "C:\\path\\to\\MCP\\windows-admin-mcp\\logs\\audit"
+[mcp_servers.windows-psremoting.env]
+WINMCP_CONFIG = "C:\\path\\to\\MCP\\windows-psremoting-mcp\\config\\servers.json"
+WINMCP_AUDIT_DIR = "C:\\path\\to\\MCP\\windows-psremoting-mcp\\logs\\audit"
 
-[mcp_servers.gitlab]
+[mcp_servers.gitlab-selfhosted]
 command = "node"
-args = ["C:\\path\\to\\MCP\\gitlab-mcp\\scripts\\launch.mjs"]
+args = ["C:\\path\\to\\MCP\\gitlab-selfhosted-mcp\\scripts\\launch.mjs"]
 startup_timeout_sec = 30
 tool_timeout_sec = 300
 
-[mcp_servers.aws-data]
+[mcp_servers.athena-quicksight]
 command = "C:\\path\\to\\python.exe"
-args = ["C:\\path\\to\\MCP\\aws-data-mcp\\athena_mcp_server.py"]
+args = ["C:\\path\\to\\MCP\\athena-quicksight-mcp\\athena_mcp_server.py"]
 startup_timeout_sec = 30
 tool_timeout_sec = 300
-[mcp_servers.aws-data.env]
+[mcp_servers.athena-quicksight.env]
 PYTHONIOENCODING = "utf-8"
 PYTHONUNBUFFERED = "1"
 
-[mcp_servers.redshift]
+[mcp_servers.redshift-readonly]
 command = "C:\\path\\to\\python.exe"
-args = ["C:\\path\\to\\MCP\\redshift-mcp\\redshift_mcp_server.py"]
+args = ["C:\\path\\to\\MCP\\redshift-readonly-mcp\\redshift_mcp_server.py"]
 startup_timeout_sec = 30
 tool_timeout_sec = 300
-[mcp_servers.redshift.env]
+[mcp_servers.redshift-readonly.env]
 PYTHONIOENCODING = "utf-8"
 PYTHONUNBUFFERED = "1"
 
@@ -198,8 +198,8 @@ tool_timeout_sec = 300
 PYTHONIOENCODING = "utf-8"
 PYTHONUNBUFFERED = "1"
 
-[mcp_servers.ssh-multiserver]
+[mcp_servers.ssh-inventory]
 command = "node"
-args = ["C:\\path\\to\\MCP\\ssh-multiserver-mcp\\index.js"]
+args = ["C:\\path\\to\\MCP\\ssh-inventory-mcp\\index.js"]
 startup_timeout_sec = 30
 tool_timeout_sec = 300

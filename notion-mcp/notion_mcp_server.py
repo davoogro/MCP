@@ -207,7 +207,7 @@ def simplify_page_properties(properties: Dict) -> Dict:
 # MCP Server + Tools
 # ============================================================
 
-mcp = FastMCP("Notion Server")
+mcp = FastMCP("notion")
 
 def _err(msg: str, **extra) -> str:
     return json.dumps({"error": msg, **extra}, ensure_ascii=False)

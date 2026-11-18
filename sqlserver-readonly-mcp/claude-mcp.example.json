@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "mssql": {
+      "type": "stdio",
+      "command": "C:\\DVB\\python\\python.exe",
+      "args": ["-m", "sqlserver_readonly_mcp"],
+      "env": {
+        "PYTHONPATH": "C:\\DVB\\mcp\\sqlserver-readonly-mcp\\src",
+        "PYTHONIOENCODING": "utf-8",
+        "PYTHONUNBUFFERED": "1"
+      }
+    }
+  }
+}
